@@ -1,0 +1,3 @@
+Test RMSE : 16.0245
+Test R²   : 0.8704
+Test MAE  : 11.7555
