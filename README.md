@@ -17,15 +17,16 @@ data 설명
    TROPOMI overpass(현지 시각 : 13:30)에 맞춰 한국 SMA(서울,인천,경기도)에 대해 가공한 파일
 
 참고 사항
-각 코드의 위 부분의 os.chdir() 에 자신의 경로로 수정해야함
+1. 각 코드의 위 부분의 os.chdir() 에 자신의 경로로 수정해야함
+2. 폰트는 제공하지 않음, 사용자의 설정 필요
 
 프로젝트 구성
 ```text
-TROPOMI_groundO3_FNR/
+LightGBM_O3_factor/
 ├─ README.md
 │
 ├─ code/                                   # Python code
-│  ├─ 1.TROPOMI_FNR_Threshold_allyear.py
+│  ├─ 1.merge_O3_factor_SMA_2019-2024.py
 │  ├─ 2.TROPOMI_FNR_Threshold_Threshold_allyear_heatmap.py
 │  └─ 3.TROPOMI_FNR_O3_Formation_Sensitivity.py
 │
