@@ -27,11 +27,23 @@ LightGBM_O3_factor/
 │
 ├─ code/                                   # Python code
 │  ├─ 1.merge_O3_factor_SMA_2019-2024.py
-│  ├─ 2.TROPOMI_FNR_Threshold_Threshold_allyear_heatmap.py
-│  └─ 3.TROPOMI_FNR_O3_Formation_Sensitivity.py
+│  ├─ 2_0.LightGBM_hpo.py
+│  └─ 2_1.LightGBM_SMA.py
 │
-├─ OUTD/SMA/                                    # 결과 
+├─ data/                                  
+│  ├─ 1330_SMA_ERA5_test.csv
+│  ├─ SMA_HCHO_NO2_TROPOMI_test.csv
+│  └─ SMA_O3_AirKorea_test.csv
+│
+├─ mid_result/                                  # LightGBM의 하이퍼 파라미터 최적화 결과 및 중간 산출물 
 │  ├─ GEMS_FNR_Threshold_SMA.txt
-│  ├─ TROPOMI_FNR_Threshold_SMA.png
-│  ├─ TROPOMI_FNR_heatmap_SMA.png
-│  └─ FNR_O3_Formation_Sensitivity_SMA.png
+│  └─ LightGBM_hpo/
+│      ├─ best_params.json
+│      ├─ lightgbm_final_result_SMA.csv
+│      └─ optuna_full_results_SMA.csv
+│
+├─ LightGBM_result                             # LightGBM의 SHAP, PDP 분석을 통한 오존 생성의 인위적, 기상적 요인 분석 및 모델 성능 평가 결과
+│  ├─ pdp_HCHO_SMA.png
+│  ├─ pdp_NO2_SMA.png
+│  ├─ shap_summary_SMA.png
+│  └─ test_performance_SMA.txt
