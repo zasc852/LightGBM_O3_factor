@@ -51,7 +51,7 @@ LightGBM_O3_factor/
 │  └─ test_performance_SMA.txt
 ```
 
-# 5. 결과 예시 :
+# 5. 결과 예시 
    <img width="1200" height="585" alt="shap_summary_SMA" src="https://github.com/user-attachments/assets/a77deb8e-0d33-4c86-ac12-08e142c3a792" />
 
    LightGBM과 SHAP분석을 통한 오존 생성의 기상 및 인위적 요인 분석(어느 요인이 오존 농도와 어떤 상관성을 가지는지 분석)
