@@ -3,19 +3,29 @@
    LightGBM과 SHAP, PDP 분석을 통한 오존 생성의 기상 및 인위적 요인 분석
 
 
-# 2. 자료 설명
+# 2. 자료 및 코드 설명
    1. SMA_O3_AirKorea_test.csv
-   :오존 농도 자료
+   : 오존 농도 자료
    AirKorea(https://www.airkorea.or.kr/) 의 지상 오존을 다운받은 후
    한국 SMA(서울,인천,경기도)에 대해 가공한 파일
    3. SMA_HCHO_NO2_TROPOMI_test.csv
-   :오존 생성의 인위적 원인(HCHO, NO2) 자료
+   : 오존 생성의 인위적 원인(HCHO, NO2) 자료
    TROPOMI(https://www.earthdata.nasa.gov/) 의 HCHO, NO2를 다운받은 후
    한국 SMA(서울,인천,경기도)에 대해 가공하고 재격자화한 파일
    3. 1330_SMA_ERA5_test.csv
    : 오존 생성의 기상적 요인(RH, SSR, u10, v10) 자료
    ERA5(https://cds.climate.copernicus.eu/) 의 hourly single level 자료 다운받은 후
    TROPOMI overpass(현지 시각 : 13:30)에 맞춰 한국 SMA(서울,인천,경기도)에 대해 가공한 파일
+   7. 2_0.LightGBM_hpo.py
+   : K-fold 교차검증 기반으로 성능 평가하며 Optuna(NSGA-II)로 R² 최대화 RMSE, MAE 최소화를 기준으로 하이퍼파라미터 최적화를 하였습니다.
+   5. 2_1.LightGBM_SMA.py
+     : 10-fold 교차검증, Test:Train(7:3)으로 LightGBM 모델을 구동함
+      PDP → NO₂, HCHO의 오존 영향
+      SHAP → 전체 변수 중요도 해석을 확인함
+   
+
+   
+
 
 # 3. 실행 환경 설정
    1. 각 코드의 위 부분의 os.chdir() 에 자신의 경로로 수정해야함
